@@ -22,14 +22,14 @@ def intersection(a, b):
 ##########################################################################################
 
 
-def intersection(a, b):
+def intersection_b(a, b):
   set_a = set(a)
   return [ item for item in b if item in set_a ]
 #Time: O(n+m)
 #Space: O(n)
 
 
-def intersection_a(lis_a, lis_b):
+def intersection(lis_a, lis_b):
   set_a = set(lis_a)
   set_b = set(lis_b)
   final = []
