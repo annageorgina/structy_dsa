@@ -19,9 +19,17 @@ def intersection(a, b):
       if a_min <= element <= b_max and element in b:
         inter.append(element)  
   return inter
+##########################################################################################
 
 
-def intersection(lis_a, lis_b):
+def intersection(a, b):
+  set_a = set(a)
+  return [ item for item in b if item in set_a ]
+#Time: O(n+m)
+#Space: O(n)
+
+
+def intersection_a(lis_a, lis_b):
   set_a = set(lis_a)
   set_b = set(lis_b)
   final = []
@@ -29,13 +37,6 @@ def intersection(lis_a, lis_b):
     if ele in set_b:
       final.append(ele)
   return final 
-
-
-def intersection_A(a, b):
-  set_a = set(a)
-  return [ item for item in b if item in set_a ]
-#Time: O(n+m)
-#Space: O(n)
 
 
 
