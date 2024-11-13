@@ -42,10 +42,6 @@ def compress(s):
 
 
 
-
-
-
-
 # c c a a a t s s s
 # 0 1 2 3 4 5 6 7 8 
 
@@ -64,7 +60,6 @@ def compress(s):
     j += 1
   return ''.join(final)
       
-print(compress('ccaaatsss'))  
 
 
 
