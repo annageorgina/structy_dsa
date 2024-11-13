@@ -1,4 +1,4 @@
-def uncompress_one(s):
+def uncompress_one_wrong(s):
   temp = ''
   for index, ele in enumerate(s):
     if index % 2 == 0:
@@ -36,25 +36,7 @@ def uncompress(s):
       j += 1
       i = j 
   return ''.join(result) 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+ 
 # n number of groups of alpha and number
 # m max number of the group
 # Time complexity O(nm)
