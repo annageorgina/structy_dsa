@@ -49,8 +49,13 @@ def reverse_string(str):
   return ''.join(str)
 
 
-print(reverse_string("hello"))
-    
+def reverse_string(text):
+  text = list(text)
+  if len(text) == 0:
+    return ''
+  return text.pop() + reverse_string(''.join(text))
+  
+print(reverse_string(""))   
 
 
 
