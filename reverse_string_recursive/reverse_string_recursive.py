@@ -1,22 +1,3 @@
-#non recursive = swap the characters
-def reverse_string_brute(s):
-  lis_s = list(s)
-  i = 0
-  j = len(lis_s)-1
-  while j > i:
-    lis_s[i], lis_s[j] = lis_s[j], lis_s[i]
-    i += 1
-    j -= 1
-  return ''.join(lis_s)
-
-
-#recursive
-def reverse_string_one(s):
-  s = list(s)
-  if len(s) == 0:
-    return ''
-  str_of_list = ''.join((s[:-1]))
-  return s[-1] + reverse_string(str_of_list)
 
 
 #recursive
@@ -54,6 +35,12 @@ def reverse_string(text):
   if len(text) == 0:
     return ''
   return text.pop() + reverse_string(''.join(text))
+
+
+def reverse_string(text):
+  if len(text) == 0:
+    return ''
+  return reverse_string(text[1:]) + text[0]
   
 print(reverse_string(""))   
 
@@ -72,6 +59,41 @@ print(reverse_string(""))
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#non recursive = swap the characters
+def reverse_string_brute(s):
+  lis_s = list(s)
+  i = 0
+  j = len(lis_s)-1
+  while j > i:
+    lis_s[i], lis_s[j] = lis_s[j], lis_s[i]
+    i += 1
+    j -= 1
+  return ''.join(lis_s)
+
+#recursive
+def reverse_string_one(s):
+  s = list(s)
+  if len(s) == 0:
+    return ''
+  str_of_list = ''.join((s[:-1]))
+  return s[-1] + reverse_string(str_of_list)
 
 
 
