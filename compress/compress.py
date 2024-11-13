@@ -50,22 +50,13 @@ def compress(s):
 # 0 1 2 3 4 5 6 7 8 
 
 
-
-
-
-
-
-
-
-
-
-
 def compress(s):
+  s += '&'
   i = 0
   j = 0
   final = []
-  while j <=len(s):
-    if j == len(s) or s[i] != s[j]:
+  while j < len(s):
+    if s[i] != s[j]:
       if (j - i) > 1:
         final.append(str(j - i))
       final.append(s[i])
