@@ -1,9 +1,17 @@
 
 
+# Recursive = larger O
 def sum_numbers_recursive(numbers):
   if len(numbers) == 0:
     return 0
   return numbers[0] + sum_numbers_recursive(numbers[1:])
+
+
+def sum_numbers_recursive(nums):
+  if nums == []:
+    return 0
+  num = nums.pop()
+  return num + sum_numbers_recursive(nums)
 
 
 #Time O(n^2) because n function calls and slicing time n 
@@ -24,24 +32,24 @@ def sum_numbers(numbers):
 
 
 
+
+
+
+
+
+
+############################################################
 def factorial(n):
   if n == 0:
     return 1
   return n * factorial(n-1)
 
 
-print(factorial(7))
 
 
 
 
-def sum_numbers_recursive(nums):
-  if nums == []:
-    return 0
-  num = nums.pop()
-  return num + sum_numbers_recursive(nums)
   
-print(sum_numbers_recursive([5, 2, 9, 10]))
 
 
 
