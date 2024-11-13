@@ -20,13 +20,6 @@ def sum_of_lengths(strings):
 
 
 
-def sum_of_lengths(lis):
-  if len(lis) == 0:
-    return 0
-  return len(lis[0]) + sum_of_lengths(lis[1:])
-print(sum_of_lengths(['goat', 'cat', 'purple']))
-
-
 
 
 
