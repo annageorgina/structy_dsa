@@ -79,7 +79,25 @@ def linked_list_values(root):
   if root.next is None:
     return [root.val]
   return [root.val] + linked_list_values(root.next)
-  
+
+
+#T O(n^2) n function calls & n list concatenation
+# S O(n^2) n lists created for each n function call 
+
+
+
+
+def linked_list_values(root):
+  values = []
+  _linked_list_values_helper(root, values)
+  return values
+
+
+def _linked_list_values_helper(root, values):
+  if root is None:
+    return []
+  values.append(root.val)
+  return _linked_list_values_helper(root.next, values)
 
 
 
