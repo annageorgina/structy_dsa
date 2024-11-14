@@ -60,6 +60,24 @@ def get_node_value(head, target):
     else:
       return None
   return current.val
+# T O(n)
+# S O(1) onmy assign current
+
+
+
+
+def get_node_value(head, target):
+  if head is None:
+    return None
+  if target == 0:
+    return head.val 
+  return get_node_value(head.next, target - 1)
+# T O(n)
+# S O(n) call stack
+
+
+
+
     
   
 
