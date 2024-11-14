@@ -40,9 +40,8 @@ def is_univalue_list(head):
   current = head
   while current:
     if current.val != head.val:
-      current = current.next
-    else:
       return False
+    current = current.next
   return True
   
 
