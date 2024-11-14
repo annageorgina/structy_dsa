@@ -75,7 +75,7 @@ def sum_list(head):
   return sum_vals
 
 
-def sum_list_1(head):
+def sum_list(head):
   if head is None: 
     return 0 
   return head.val + sum_list(head.next)
