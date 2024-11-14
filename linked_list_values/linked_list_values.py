@@ -69,6 +69,19 @@ def linked_list_values(root):
     values.append(current.val)
     current = current.next
   return values
+# T O(n)
+# S O(n)
+
+
+def linked_list_values(root):
+  if root is None:
+    return []
+  if root.next is None:
+    return [root.val]
+  return [root.val] + linked_list_values(root.next)
+  
+
+
 
 
 
