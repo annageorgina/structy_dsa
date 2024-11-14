@@ -96,6 +96,17 @@ def tree_value_count(root, target):
 
 
 
+def tree_value_counts(root, target):
+  if root is None:
+    return 0
+  match = 0 if target != root.val else 1
+  left_matches = tree_value_counts(root.left, target)
+  right_matches = tree_value_counts(root.right, target)
+  return macth + left_matches + right_matches 
+
+
+
+
 
 
 
