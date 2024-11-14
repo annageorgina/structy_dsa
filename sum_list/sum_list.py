@@ -73,12 +73,16 @@ def sum_list(head):
     sum_vals += current.val
     current = current.next 
   return sum_vals
+# T O(n) while thorugh n
+#S O(1) addition 
 
 
 def sum_list(head):
   if head is None: 
     return 0 
   return head.val + sum_list(head.next)
+# T O(n) n function calls 
+# S O(n) n iteractions 
 
 
 
