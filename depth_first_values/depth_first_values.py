@@ -83,6 +83,12 @@ def depth_first_values(root):
     if current.left is not None:
       stack.append(current.left)
   return values 
+
+
+def depth_first_values(root):
+  if root is None:
+    return []
+  return [root.val, *depth_first_values(root.left), *depth_first_values(root.right)]
     
 
 
