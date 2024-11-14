@@ -1,18 +1,7 @@
-  max_streak = 0 
-  while current is not None:
-    if current.val == prev_val:
-      streak += 1
-    else:
-      streak = 1
-    prev_val = current.val
-    max_streak = max(max_streak, streak)
-    current = current.next
   return max_streak
-
 
 #Time O(n) while loop
 #Space: O(1)
-
 
 def longest_streak(head, max_streak = 0, streak = 1):
   if head is None:
@@ -37,10 +26,12 @@ def longest_streak(head):
   current = head 
   max_streak = 0 
   streak = 1
+  
   if current is None:
     return 0
   if current.next is None:
     return 1
+    
   while current.next is not None:
     if current.val == current.next.val:
       streak+=1
@@ -50,17 +41,32 @@ def longest_streak(head):
       streak = 1
     current = current.next
   return max_streak
+# T O(n)
+# S O(1)
+
+def longest_streak(head):
+  if head is None:
+    return 0
+  return _longest_streak(head)
 
 
+def _longest_streak(head, max_streak=None, streak=None):
+  if streak is None:
+    streak = 1
+  if max_streak is None:
+    max_streak = streak
+  if head.next is None:
+    return max_streak
+  if head.val == head.next.val:
+    streak += 1
+    if streak > max_streak:
+      max_streak = streak
+  else:
+    streak = 1
+  return _longest_streak(head.next, max_streak, streak)
+    
 
 print(longest_streak(a))
-
-
-
-
-
-
-
 
 
 
@@ -114,25 +120,33 @@ def longest_streak_i2(head):
   current = head 
   prev_val = None
   streak = 0 
+  max_streak = 0 
+  while current is not None:
+    if current.val == prev_val:
+      streak += 1
+    else:
+      streak = 1
+    prev_val = current.val
+    max_streak = max(max_streak, streak)
+    current = current.next
   return longest_streak(head.next, max_streak, streak)
   
   
   
 
-
 #print(longest_streak(a))
-
-
 
 
 def longest_streak(head):
   current = head 
   max_streak = 0 
   streak = 1
+  
   if current is None:
     return 0
   if current.next is None:
     return 1
+    
   while current.next is not None:
     if current.val == current.next.val:
       streak+=1
@@ -140,11 +154,34 @@ def longest_streak(head):
         max_streak = streak
     else: 
       streak = 1
+    current = current.next
   return max_streak
+# T O(n)
+# S O(1)
+
+
+def longest_streak(head):
+  if head is None:
+    return 0
+  return _longest_streak(head)
 
 
 
 
+def _longest_streak(head, max_streak=None, streak=None):
+  if streak is None:
+    streak = 1
+  if max_streak is None:
+    max_streak = streak
+  if head.next is None:
+    return max_streak
+  if head.val == head.next.val:
+    streak += 1
+    if streak > max_streak:
+      max_streak = streak
+  else:
+    streak = 1
+    
 
 
 print(longest_streak(a))
