@@ -43,6 +43,17 @@ def is_univalue_list(head):
       return False
     current = current.next
   return True
+
+
+
+
+def is_univalue_list(head):
+  if head.next is None:
+    return True
+  if head.val != head.next.val:
+    return False
+  return is_univalue_list(head.next)
+  
   
 
 
