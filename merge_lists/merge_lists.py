@@ -1,3 +1,103 @@
+def merge_lists_i(head_1, head_2):
+  dummy_head = Node(None)
+  tail = dummy_head
+  current_1 = head_1
+  current_2 = head_2
+  
+  while current_1 is not None and current_2 is not None:
+    if current_1.val < current_2.val:
+      tail.next = current_1
+      current_1 = current_1.next
+    else:
+      tail.next = current_2
+      current_2 = current_2.next
+    tail = tail.next
+  if current_1 is not None:
+    tail.next = current_1
+  if current_2 is not None:
+    tail.next = current_2    
+  return dummy_head.next
+#Time O(min(n+m))
+#Space O(1)
+    
+    
+    
+print(merge_lists(a, q))  
+
+def merge_list(head_1, head_2):
+  if head_1 is None:
+    return head_2
+  if head_2 is None:
+    return head_1
+  if head_1.val <= head_2.val:
+    head_1.next = merge_list(head_1.next, head_2)
+    return head_1
+  else:
+    head_2.next = merge_list(head_1, head_2.next)
+    return head_2
+
+
+
+
+def merge_list(head_1, head_2):
+  dummy_head = Node(None)
+  tail = dummy_head
+  current_1 = head_1
+  current_2 = head_2
+
+  while current_1 is not None and current_2 is not None:
+    if current_1.val <= current_2.val:
+      tail.next = current_1
+      current_1 = current_1.next 
+    else:
+      tail.next = current_2
+      current_2 = current_2.next 
+    tail = tail.next 
+
+  if current_2 is not None:
+    tail.next = current_2
+  if current_1 is not None:
+    tail.next = current_1
+  return dummy_head.next
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  
+
+class Node:
+  def __init__(self, val):
+    self.val = val
+    self.next = None
+
+a = Node(5)
+b = Node(7)
+c = Node(10)
+d = Node(12)
+e = Node(20)
+f = Node(28)
 a.next = b
 b.next = c
 c.next = d
@@ -36,21 +136,6 @@ def merge_lists(head_1, head_2):
 #Space: O(min(n, m))   
 
 # iterative
-def merge_lists_i(head_1, head_2):
-  dummy_head = Node(None)
-  tail = dummy_head
-  current_1 = head_1
-  current_2 = head_2
-  
-  while current_1 is not None and current_2 is not None:
-    if current_1.val < current_2.val:
-      tail.next = current_1
-      current_1 = current_1.next
-    else:
-      tail.next = current_2
-      current_2 = current_2.next
-    tail = tail.next
-  if current_1 is not None:
     tail.next = current_1
   if current_2 is not None:
     tail.next = current_2    
@@ -61,31 +146,6 @@ def merge_lists_i(head_1, head_2):
     
     
 print(merge_lists(a, q))  
-
-
-
-def merge_list(head_1, head_2):
-  if head_1.val < head_2.val:
-    first_node = head_1
-  else:
-    first_node = head_2
-  ref_node = head_1
-  current_1 = head_1.next
-  current_2 = head_2
-
-  while current_1 is not None and current_2 is not None:
-    if ref_node.val < current_2.val:
-      ref_node = ref_node.next
-      current_1 = current_1.next
-    else:
-      current_2, current_2.next = current_2.next, ref_node
-      
-  if current_2 is not None:
-    ref_node.next = current_2
-  if current_1 is not None:
-    ref_node.next = current_1
-  return first_node
-
 
 def merge_list(head_1, head_2):
   if head_1 is None:
@@ -98,6 +158,35 @@ def merge_list(head_1, head_2):
   else:
     head_2.next = merge_list(head_1, head_2.next)
     return head_2
+
+
+
+
+
+
+
+
+def merge_list(head_1, head_2):
+  dummy_head = Node(None)
+  tail = dummy_head
+  current_1 = head_1
+  current_2 = head_2
+
+
+  while current_1 is not None and current_2 is not None:
+    if current_1.val <= current_2.val:
+      tail.next = current_1
+      current_1 = current_1.next 
+    else:
+      tail.next = current_2
+      current_2 = current_2.next 
+    tail = tail.next 
+
+
+  if current_2 is not None:
+  if current_1 is not None:
+    tail.next = current_1
+  return dummy_head.next
   
 
 
