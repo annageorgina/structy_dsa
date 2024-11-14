@@ -45,27 +45,6 @@ def sum_list(head):
 # Space O(n): my_sum n iterations
 
 
-# NOT MOST EFFICIENT
-# recursive with helper 
-# recursive
-def sum_list_r_he(head):
-  my_sum = 0
-  return _sum_list_helper(head, my_sum)
-  
-
-
-def _sum_list_helper(head, my_sum):
-  print('my_sum',my_sum)
-  if head is None:
-    return my_sum
-  my_sum += head.val
-  return _sum_list_helper(head.next, my_sum)
-  
-print(sum_list(a))
-
-
-
-
 def sum_list(head):
   current = head 
   sum_vals = 0
@@ -83,6 +62,32 @@ def sum_list(head):
   return head.val + sum_list(head.next)
 # T O(n) n function calls 
 # S O(n) n iteractions 
+
+
+
+
+
+
+##########################
+
+
+# NOT MOST EFFICIENT
+# recursive with helper 
+# recursive
+def sum_list_r_he(head):
+  my_sum = 0
+  return _sum_list_helper(head, my_sum)
+  
+
+
+def _sum_list_helper(head, my_sum):
+  print('my_sum',my_sum)
+  if head is None:
+    return my_sum
+  my_sum += head.val
+  return _sum_list_helper(head.next, my_sum)
+  
+print(sum_list(a))
 
 
 
