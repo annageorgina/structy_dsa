@@ -1,16 +1,3 @@
-  print(head.val)
-
-##### ABOVE I WAS ALSO TAKING OFF THE DELETED NODE FROM THE NEXT NODE! BUT iT ISN4T NECESSARILY NEEDED!! 
-
-# here we only reroute the prev to the current.next
-def remove_node_a(head, target_val):
-  current = head 
-  prev = None
-  if head.val == target_val:
-    return head.next
-  while current is not None:
-    if current.val == target_val:
-      prev.next = current.next
       break
     prev = current
     current = current.next
@@ -52,6 +39,9 @@ def remove_node(head, target):
     prev, current = current, current.next
   return dummy_head.next
 
+#T O(n)
+# S O(1)
+
 
 def remove_node(head, target):
   if head is None:
@@ -60,7 +50,8 @@ def remove_node(head, target):
     return head.next
   head.next = remove_node(head.next, target)
   return head
-      
+# T O(n)
+# S O(n)
 
   
 
@@ -71,6 +62,23 @@ def remove_node(head, target):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Node:
+   def __init__(self, val):
+     self.val = val
+     self.next = None
      
 a = Node("a")
 b = Node("b")
@@ -119,6 +127,31 @@ def remove_node(head, target_val, og_head = None, prev = None):
     if prev is not None:
       prev.next = store_next
   return og_head
+  print(head.val)
+
+##### ABOVE I WAS ALSO TAKING OFF THE DELETED NODE FROM THE NEXT NODE! BUT iT ISN4T NECESSARILY NEEDED!! 
+
+# here we only reroute the prev to the current.next
+def remove_node_a(head, target_val):
+  current = head 
+  prev = None
+  if head.val == target_val:
+    return head.next
+  while current is not None:
+    if current.val == target_val:
+      prev.next = current.next
+      break
+    prev = current
+    current = current.next
+  return head
+# Time O(n) traversing though linked list
+# SPace O(1) assigned one previous node 
+
+# Think about it as a 'leap of faith' the head.next is assigned to the result of the recursive function !
+def remove_node_A(head, target_val):
+  if head is None:
+    return head
+  if head.val == target_val:
     return head.next
   head.next = remove_node_A(head.next, target_val)
   return head 
@@ -132,9 +165,6 @@ print(remove_node(a, "c"))
 print(c.val, c.next)
   
   
-
-
-
 
 
 
@@ -153,6 +183,10 @@ def remove_node(head, target):
   return dummy_head.next
 
 
+#T O(n)
+# S O(1)
+
+
 
 
 def remove_node(head, target):
@@ -161,7 +195,8 @@ def remove_node(head, target):
   if head.val == target:
     return head.next
   head.next = remove_node(head.next, target)
-      
+  return head
+# T O(n)
 
 
   
